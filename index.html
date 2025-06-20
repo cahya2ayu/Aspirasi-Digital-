@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aspira Digital MPK</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-xl">
+      <h1 class="text-3xl font-bold mb-2 text-center">Aspira Digital MPK 2025</h1>
+      <p class="text-center text-sm text-gray-500 mb-6">Sampaikan aspirasimu secara anonim dan sopan untuk kemajuan sekolah kita!</p>
+      <form id="aspirationForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium">Kategori Aspirasi</label>
+          <select class="w-full mt-1 p-2 border rounded-lg" required>
+            <option value="">Pilih Kategori</option>
+            <option value="Fasilitas">Fasilitas</option>
+            <option value="Kegiatan">Kegiatan OSIS/MPK</option>
+            <option value="Guru">Guru & Pembelajaran</option>
+            <option value="Tata Tertib">Tata Tertib</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Isi Aspirasi</label>
+          <textarea rows="5" class="w-full mt-1 p-2 border rounded-lg" placeholder="Tulis aspirasimu di sini..." required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Kirim Aspirasi</button>
+      </form>
+      <div id="successMessage" class="hidden text-green-600 mt-4 text-center font-semibold">Aspirasi berhasil dikirim. Terima kasih!</div>
+    </div>
+  </div>
+  <script>
+    document.getElementById("aspirationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Simulasi pengiriman data
+      document.getElementById("aspirationForm").reset();
+      document.getElementById("successMessage").classList.remove("hidden");
+      setTimeout(() => {
+        document.getElementById("successMessage").classList.add("hidden");
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
